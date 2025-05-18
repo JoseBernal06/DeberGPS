@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MyGps</string>
+    <string name="title_activity_main">MyGps</string>
+    <string name="package_name">mygps.app.mygps</string>
+    <string name="custom_url_scheme">mygps.app.mygps</string>
+</resources>
