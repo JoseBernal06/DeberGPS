@@ -39,6 +39,7 @@ export class HomePage {
   latitude: number | null = null;
   longitude: number | null = null;
 
+  url: string = `https://www.google.com/maps?q=${this.latitude},${this.longitude}`;
   constructor(private gpsService: GpsService) {}
 
   ngOnInit() {
@@ -50,7 +51,8 @@ export class HomePage {
       (position) => {
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
-        this.gpsService.guardarCoordenadas(this.nombre, lat, lng)
+        const url = `https://www.google.com/maps?q=${lat},${lng}`;
+        this.gpsService.guardarCoordenadas(this.nombre, lat, lng, url)
           .then(() => alert('Coordenadas guardadas'))
           .catch(err => alert('Error al guardar: ' + err));
       },

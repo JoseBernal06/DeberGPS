@@ -5,13 +5,14 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 export class GpsService {
     constructor(private firestore: Firestore) {}
 
-    guardarCoordenadas(nombre: string, latitud: number, longitud: number) {
+    guardarCoordenadas(nombre: string, latitud: number, longitud: number, url: string) {
         const ref = collection(this.firestore, 'coordenadas');
         return addDoc(ref, {
-        nombre,
-        latitud,
-        longitud,
-        fecha: new Date()
+            nombre,
+            latitud,
+            longitud,
+            url,
+            fecha: new Date()
         });
     }
 }
